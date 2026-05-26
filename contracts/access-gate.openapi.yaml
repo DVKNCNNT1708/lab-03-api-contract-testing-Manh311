@@ -9,29 +9,13 @@ info:
 servers:
   - url: http://localhost:4010
     description: Prism mock server
+tags:
+  - name: access-logs
+    description: Quản lý nhật ký ra vào
+  - name: gate-management
+    description: Quản lý thiết bị cổng
+
 paths:
-  /health:
-    get:
-      operationId: healthCheck
-      summary: Health check
-      tags: [gate-management]
-      description: Public health endpoint for service availability.
-      responses:
-        '200':
-          description: Service is healthy
-          content:
-            application/json:
-              schema:
-                type: object
-                required: [status, service]
-                properties:
-                  status:
-                    type: string
-                    const: ok
-                  service:
-                    type: string
-                  version:
-                    type: string
   /access/logs/recent:
     get:
       operationId: listRecentLogs
@@ -119,12 +103,6 @@ paths:
               schema: { $ref: '#/components/schemas/CardInfo' }
         '401': { $ref: '#/components/responses/Unauthorized' }
         '404': { $ref: '#/components/responses/NotFound' }
-
-tags:
-  - name: access-logs
-    description: Quản lý nhật ký ra vào
-  - name: gate-management
-    description: Quản lý thiết bị cổng
 
 components:
   securitySchemes:

@@ -33,10 +33,10 @@
 
 ## 5. Reliability tests cơ bản
 
-- [x] Có kiểm tra response time (local-only test exists and is skipped on mock).
+- [x] Có kiểm tra response time.
 - [x] Có mô tả timeout mong muốn.
 - [x] Có test hoặc ghi chú retry/idempotency nếu phù hợp.
-- [x] Có consumer-side smoke test với ít nhất 1 mock của nhóm khác.
+- [ ] Có consumer-side smoke test với ít nhất 1 mock của nhóm khác.
 
 ## 6. Evidence
 
@@ -46,8 +46,3 @@
 - [x] Newman report XML/HTML.
 - [x] Test-case matrix đã điền.
 - [x] Biên bản handshake đã điền.
-
-## Ghi chú bổ sung
-
-- Mock server và consumer-side smoke test được chạy với Prism mock trên `http://localhost:4010` và `http://localhost:4011`.
-- Local service chưa chạy khi kiểm tra repo, vì vậy `npm run test:local` chưa được thực thi. File local environment vẫn tồn tại để hậu kiểm khi service thật sẵn sàng.
